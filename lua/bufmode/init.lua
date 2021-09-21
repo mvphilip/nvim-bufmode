@@ -10,7 +10,10 @@ local _combos =
 	['$'] = 'blast',
 	['0'] = 'bfirst',
 	['?'] = 'help bufmode-usage',
-	['b'] = 'bprevious',
+	['h'] = 'wincmd h',
+	['j'] = 'wincmd k',
+	['k'] = 'wincmd j',
+	['l'] = 'wincmd l',
 	['d'] = 'silent! bdelete',
 	['w'] = 'bnext',
 }
@@ -50,17 +53,22 @@ end
 -- Synonyms for '0'
 _inherit('^', '0')
 _inherit(_to_char '<Home>', '0')
-_inherit(_to_char '<Up>',   '0')
 
--- Synonyms for '$'
-_inherit(_to_char '<End>',  '$')
-_inherit(_to_char '<Down>', '$')
 
--- Synonyms for 'b'
-_inherit('j', 'b')
-_inherit('h', 'b')
-_inherit(_to_char '<Left>',   'b')
+-- Synonyms for 'j'
+_inherit(_to_char '<Up>',   'j')
+
+-- Synonyms for 'k'
+_inherit(_to_char '<Down>', 'k')
+
+_inherit(_to_char '<Left>',   'h')
 _inherit(_to_char '<PageUp>', 'b')
+
+_inherit(_to_char '<Right>',   'l')
+_inherit(_to_char '<PageDown>', 'l')
+
+-- Synonyms for '?'
+_inherit('?', '.')
 
 -- Synonyms for 'B'
 _inherit('J', 'B')
@@ -71,18 +79,6 @@ _inherit(_to_char '<S-PageUp>', 'B')
 -- Synonyms for 'f'
 _inherit('g', 'f')
 _inherit('t', 'f')
-
--- Synonyms for 'w'
-_inherit('k', 'w')
-_inherit('l', 'w')
-_inherit(_to_char '<Right>',    'w')
-_inherit(_to_char '<PageDown>', 'w')
-
--- Synonyms for 'W'
-_inherit('K', 'W')
-_inherit('L', 'W')
-_inherit(_to_char '<S-Right>',    'W')
-_inherit(_to_char '<S-PageDown>', 'W')
 
 --[[/* PUBLICIZE MODULE */]]
 
